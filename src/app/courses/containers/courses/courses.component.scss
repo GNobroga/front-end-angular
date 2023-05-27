@@ -1,0 +1,60 @@
+.courses {
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+
+    .loading-spinner {
+        display: flex;
+        justify-content: center;
+        padding: 25px;
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    .center {
+        display: flex;
+        align-items: center;
+    }
+
+    .buttons {
+        padding: 5px;
+        display: flex;
+        gap: 5px;
+    }
+
+}
+
+
+app-course-form {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    z-index: 99;
+    animation: AppCourseFormVisible 0.5s ease-in;
+}
+
+.visible {
+    animation: Visible 0.5s ease-in;
+}
+
+.unvisible {
+    animation: Unvisible 0.5s ease-in;
+}
+
+@keyframes Visible {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Unvisible {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+

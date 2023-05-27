@@ -1,0 +1,25 @@
+<div class="courses" *ngIf="!modalVisible">
+    <mat-toolbar color="primary">
+        <span>Cursos Disponiveis</span>
+    </mat-toolbar>
+
+    <app-courses-list  (sendData)="onAdd()" *ngIf="listCourses$ | async as courses; else loading" [courses]="courses" (onEditEvent)="onEdit(false, $event)"></app-courses-list>
+
+    <ng-template #loading>
+        <div class="loading-spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
+
+    <mat-card>
+        <mat-card-content></mat-card-content>
+    </mat-card>
+</div>
+<ng-template [ngIf]="modalVisible">
+    <app-course-form
+        (edit)="onEdit(true, $event)"
+        [course]="courseEdit"
+        (submitData)="getData($event)"
+        [ngClass]="{ visible: modalVisible, unvisible: !modalVisible }"
+    ></app-course-form>
+</ng-template>

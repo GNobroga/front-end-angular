@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'crud-angular';
+
+    private _title: string = "Curso de Angular + Spring";
+
+    public clicked(): void {
+        console.log("Hello World, I`m here. ");
+    }
+
+    get title(): string {
+        return this._title.toUpperCase();
+    }
 }

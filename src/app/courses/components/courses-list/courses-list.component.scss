@@ -1,0 +1,20 @@
+$scale: 1.2;
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button:hover {
+        transform: scale($scale);
+    }
+
+}
+
+mat-header-cell {
+    justify-content: center;
+}
+
+mat-cell {
+    justify-content: center;
+}
